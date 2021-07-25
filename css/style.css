@@ -1,0 +1,133 @@
+/* font */
+@font-face {
+  font-family: "BebasNeue";
+  src: url(../font/BebasNeue-Regular.woff) format("woff");
+}
+
+/* utama*/
+body {
+  font: 18px/36px "BebasNeue", "arial narrow", "arial", "sans-serif";
+  background-color: #eaeaea;
+}
+
+h1 {
+  font-size: 80px;
+  text-align: center;
+  margin: 50px 0;
+  text-shadow: 3px 1px 2px white;
+}
+
+.container {
+  background-color: white;
+  width: 800px;
+  margin: auto;
+  padding: 35px;
+  box-shadow: 0 0 7px rgba(94, 56, 56, 0.8);
+  border-radius: 5px;
+}
+
+.gallery li {
+  width: 120px;
+  height: 120px;
+  /* overflow: hidden; */
+  border: 5px solid rgb(51, 51, 51);
+  float: left;
+  margin-left: 25px;
+  position: relative;
+}
+
+.gallery li,
+.gallery span,
+.gambar {
+  border-radius: 50%;
+}
+
+.gallery li span {
+  display: block;
+  width: 120px;
+  height: 120px;
+  top: 0;
+  background-color: rgba(200, 200, 200, 0.5);
+  position: absolute;
+  text-align: center;
+  line-height: 120px;
+  color: #333;
+  text-shadow: 1px 1px 1px #ddd;
+  opacity: 0;
+  transform: scale(0) rotate(0);
+  transition: 0.3s;
+}
+
+.gallery li a:hover span {
+  opacity: 1;
+  transform: scale(100%) rotate(360deg);
+}
+/* clear */
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+  *zoom: 1;
+}
+
+/* overlay */
+.overlay {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 1s;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.overlay:target {
+  width: auto;
+  height: auto;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 1s;
+  cursor: none;
+}
+
+.overlay img {
+  max-height: 100%;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.overlay:target img {
+  animation: zoomDanFade 2s;
+  transition: 2s;
+}
+
+/* bikin animasi */
+@keyframes zoomDanFade {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
