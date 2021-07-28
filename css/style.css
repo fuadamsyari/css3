@@ -1,12 +1,12 @@
 /* font */
 @font-face {
-  font-family: "BebasNeue";
-  src: url(../font/BebasNeue-Regular.woff) format("woff");
+  font-family: 'BebasNeue';
+  src: url(../font/BebasNeue-Regular.woff) format('woff');
 }
 
 /* utama*/
 body {
-  font: 18px/36px "BebasNeue", "arial narrow", "arial", "sans-serif";
+  font: 18px/36px 'BebasNeue', 'arial narrow', 'arial', 'sans-serif';
   background-color: #eaeaea;
 }
 
@@ -65,7 +65,7 @@ h1 {
 /* clear */
 .cf:before,
 .cf:after {
-  content: " "; /* 1 */
+  content: ' '; /* 1 */
   display: table; /* 2 */
 }
 
@@ -107,7 +107,6 @@ h1 {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   transition: 1s;
-  cursor: none;
 }
 
 .overlay img {
@@ -117,7 +116,42 @@ h1 {
 
 .overlay:target img {
   animation: zoomDanFade 2s;
-  transition: 2s;
+}
+
+.overlay .close {
+  position: absolute;
+  padding: 0 10px;
+  top: 40px;
+  text-decoration: none;
+  color: white;
+  border: solid 3px whitesmoke;
+  left: 50%;
+  margin-left: -35px;
+  transform: scale(0);
+}
+
+.overlay:target .close {
+  animation: zoomDanFade 2s;
+  transform: scale(1);
+  border-radius: 10px;
+}
+
+.overlay .prev img {
+  box-shadow: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  left: 50%;
+  margin-left: -300px;
+}
+
+.overlay .next img {
+  box-shadow: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  right: 50%;
+  margin-right: -300px;
 }
 
 /* bikin animasi */
